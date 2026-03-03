@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Classification</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Interpretor</h1>
+        <h2>Neural Animal Classification</h2>
+      </div>
+      <form
+        id="upload-form"
+        action="/classify"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="upload-group">
+          <h3>Upload Image</h3>
+
+          <div id="upload-box">
+            <svg ...>...</svg>
+
+            <img
+              id="image-preview"
+              src="#"
+              alt="Preview"
+              style="display: none; max-width: 100%; border-radius: 12px"
+            />
+
+            <div class="text-btn">
+              <p id="upload-text">Drop file here or upload</p>
+              <button type="button" id="browse-btn">Browse</button>
+            </div>
+
+            <input
+              type="file"
+              name="file"
+              id="file-input"
+              class="hidden"
+              accept="image/*"
+              style="display: none"
+            />
+          </div>
+
+          <button
+            type="submit"
+            id="upload-btn"
+            disabled
+            style="opacity: 0.5; cursor: not-allowed"
+          >
+            Analyze Image
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
