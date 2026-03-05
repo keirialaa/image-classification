@@ -17,7 +17,7 @@ The model is a custom 5-block Convolutional Neural Network (CNN) featuring:
 ## 📊 Performance
 The model achieved a balanced weighted average F1-score of 0.82.
 * **Best Classes:** Spiders (0.90 F1) and Chickens (0.89 F1).
-* **Key Insight:** High precision for dogs (0.94) shows the model is highly reliable when it identifies a dog, though it occasionally misses more subtle dog features (recall 0.63).<img width="1004" height="801" alt="Screenshot 2026-03-05 at 19 14 43" src="https://github.com/user-attachments/assets/aa3b1ad9-ea4c-4675-a72e-a8512d246f9e" />
+* **Key Insight:** High precision for dogs (0.94) shows the model is highly reliable when it identifies a dog, though it occasionally misses more subtle dog features (recall 0.63).
 
 ## 📂 Project Structure
 - models/: Contains the saved .keras model file.
