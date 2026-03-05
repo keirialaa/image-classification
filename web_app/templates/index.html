@@ -11,12 +11,23 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='favicon.ico') }}"
+    />
   </head>
   <body>
     <div class="container">
       <div class="header">
-        <h1>Interpretor</h1>
-        <h2>Neural Animal Classification</h2>
+        <h1>Which animal is that?</h1>
+        <h2>Deep learning for the animal kingdom</h2>
+        <div class="info-section">
+          <p>Our AI is trained to recognize <strong>10 species</strong>:</p>
+          <p>
+            Butterfly, Cat, Chicken, Cow, Horse, Dog, Elephant, Sheep, Spider,
+            Squirrel
+          </p>
+        </div>
       </div>
       <form
         id="upload-form"
@@ -28,7 +39,22 @@
           <h3>Upload Image</h3>
 
           <div id="upload-box">
-            <svg ...>...</svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#1685fa"
+              class="size-6"
+              width="48"
+              height="48"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
+              />
+            </svg>
 
             <img
               id="image-preview"

@@ -1,33 +1,22 @@
-# --- Datasets ---
+# VS Code
+.vscode/
+.ipynb_checkpoints/
+
+# Python & Environments
+__pycache__/
+*.pyc
+venv/
+env/
+.env
+
+# Data
 data/
 datasets/
 *.zip
 *.tar.gz
 
-# --- Python & Virtual Environments ---
-__pycache__/
-*.py[cod]
-*$py.class
-venv/
-env/
-.env
-.venv/
-
-# --- Jupyter Notebooks ---
-.ipynb_checkpoints
-*/.ipynb_checkpoints/*
-
-# --- ML Models & Weights ---
-# Ignore large model files (H5, PKL, TFLITE, ONNX, etc.)
-*.h5
-*.pth
-*.pkl
-*.model
-*.tflite
-*.pb
-saved_model/
-
-# --- macOS / OS System files ---
+# OS specific
 .DS_Store
-.AppleDouble
-.LSOverride
+Thumbs.db
+
+translate.py

@@ -14,7 +14,7 @@ browseBtn.addEventListener("click", () => fileInput.click());
 uploadBox.addEventListener("dragover", (e) => {
   e.preventDefault();
   uploadBox.style.borderColor = "#1685fa";
-  uploadBox.style.backgroundColor = "#f0f7ff";
+  uploadBox.style.backgroundColor = "#F2F2F2";
 });
 
 uploadBox.addEventListener("dragleave", () => {
@@ -45,6 +45,7 @@ function handlePreview(file) {
   const reader = new FileReader();
   reader.onload = (e) => {
     imagePreview.src = e.target.result;
+    uploadBox.style.gap = "0";
     imagePreview.style.display = "block";
 
     // Hide the icon and change text to filename
@@ -58,3 +59,28 @@ function handlePreview(file) {
   };
   reader.readAsDataURL(file);
 }
+
+// Submit image and make a prediction
+document.getElementById("upload-form").addEventListener("submit", async (e) => {
+  e.preventDefault(); // Stop the page from refreshing
+
+  const formData = new FormData(e.target);
+  uploadBtn.innerText = "Analyzing...";
+  uploadBtn.disabled = true;
+
+  try {
+    const response = await fetch("/classify", {
+      method: "POST",
+      body: formData,
+    });
+    const data = await response.json();
+
+    // Display the result in UI
+    alert(`Prediction: ${data.prediction} (${data.confidence})`);
+  } catch (error) {
+    console.error("Error:", error);
+  } finally {
+    uploadBtn.innerText = "Analyze Image";
+    uploadBtn.disabled = false;
+  }
+});
